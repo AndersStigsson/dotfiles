@@ -1,0 +1,45 @@
+{
+	"coc.preferences.colorSupport": true,
+	"coc.preferences.enableFloatHighlight": true,
+	"coc.preferences.floatActions": true,
+	"coc.preferences.hoverTarget": "float",
+	"vetur.format.enable": false,
+
+	"git.addGBlameToBufferVar": true,
+	"html.autoClosingTags": false,
+	"html.completion.attributeDefaultValue":"empty",
+
+	"suggest.enablePreview": true,
+	"suggest.floatEnable": true,
+	"snippets.ultisnips.enable": true,
+	"snippets.loadFromExtensions": true,
+	"suggest.numberSelect": false,
+	"diagnostic.refreshOnInsertMode": false,
+	"diagnostic.virtualText": false,
+	"diagnostic.messageTarget":"float",
+	"codeLens.enable": true,
+	"signature.target": "float",
+	"diagnostic.checkCurrentLine": true,
+	"go.goplsOptions": {
+		"staticcheck": true
+	},
+
+	"languageserver": { 
+		"golangci-lint-languageserver": {
+			"command": "golangci-lint-langserver",
+			"filetypes": ["go"],
+			"initializationOptions": {
+				"command": ["golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json"]
+			}
+		}
+	},
+	"diagnostic-languageserver.filetypes": {
+		"php": "phpcs",
+		"javascript": "eslint",
+		"vue": "eslint",
+		"typescript": "eslint"
+	},
+	"diagnostic-languageserver.formatFiletypes": {
+	},
+	"coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript"]
+}
