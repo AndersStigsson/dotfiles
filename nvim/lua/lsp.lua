@@ -26,8 +26,9 @@ require("nvim-lsp-installer").setup {
     }
 }
 
-lspconfig = require "lspconfig"
-util = require "lspconfig/util"
+lspconfig = require("lspconfig")
+lspconfig_configs = require('lspconfig/configs')
+lspconfig_util = require('lspconfig/util')
 
 -- -- Mappings.
 local opts = { noremap=true, silent=true }
@@ -76,6 +77,88 @@ for _, lsp in pairs(lspServers) do
                 };
             };
         }
+    end
+    if lsp == 'volar' then
+         --lspconfig_configs.volar_api = {
+         --           default_config: vim.tbl_extend('force',
+         --           lspconfig.volar.document_config.default_config, {
+         --               filetypes: { 'vue' },
+         --               init_options: {
+         --                   typescript: {
+         --                       serverPath: ''
+         --                   },
+         --                   languageFeatures: {
+         --                       implementation: true, -- new in @volar/vue-language-server v0.33
+         --                       references: true,
+         --                       definition: true,
+         --                       typeDefinition: true,
+         --                       callHierarchy: true,
+         --                       hover: true,
+         --                       rename: true,
+         --                       renameFileRefactoring: true,
+         --                       signatureHelp: true,
+         --                       codeAction: true,
+         --                       workspaceSymbol: true,
+         --                       completion: {
+         --                           defaultTagNameCase: 'both',
+         --                           defaultAttrNameCase: 'kebabCase',
+         --                           getDocumentNameCasesRequest: false,
+         --                           getDocumentSelectionRequest: false,
+         --                       },
+         --                   }
+         --               },
+         --           })
+         --       }
+
+         --       lspconfig_configs.volar_doc = {
+         --           default_config: vim.tbl_extend('force',
+         --           lspconfig.volar.document_config.default_config, {
+         --               filetypes: { 'vue' },
+         --               init_options: {
+         --                   typescript: {
+         --                       serverPath: ''
+         --                   },
+         --               },
+         --               languageFeatures: {
+         --                   implementation: true, -- new in @volar/vue-language-server v0.33
+         --                   documentHighlight: true,
+         --                   documentLink: true,
+         --                   codeLens: { showReferencesNotification: true},
+         --                   -- not supported - https://github.com/neovim/neovim/pull/15723
+         --                   semanticTokens: false,
+         --                   diagnostics: true,
+         --                   schemaRequestService: true,
+         --               }
+         --           })
+         --       }
+
+         --       lspconfig_configs.volar_html = {
+         --           default_config: vim.tbl_extend('force',
+         --           lspconfig.volar.document_config.default_config, {
+         --               filetypes: { 'vue' },
+         --               init_options: {
+         --                   typescript: {
+         --                       serverPath: ''
+         --                   },
+         --                   documentFeatures: {
+         --                       selectionRange: true,
+         --                       foldingRange: true,
+         --                       linkedEditingRange: true,
+         --                       documentSymbol: true,
+         --                       -- not supported - https://github.com/neovim/neovim/pull/13654
+         --                       documentColor: false,
+         --                       documentFormatting: {
+         --                           defaultPrintWidth: 100,
+         --                       },
+         --                   }
+         --               },
+         --           })
+         --       }
+
+         --       lspconfig.volar_api.setup(opts)
+         --       lspconfig.volar_doc.setup(opts)
+         --       lspconfig.volar_html.setup(opts)
+        --        vim.cmd [[ do User LspAttachBuffers ]
     end
     require('lspconfig')[lsp].setup(opts)
 end
