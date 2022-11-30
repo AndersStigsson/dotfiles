@@ -113,6 +113,7 @@ Plug 'f-person/git-blame.nvim'
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
+Plug 'jreybert/vimagit'
 call plug#end()
 source $HOME/.config/nvim/telescope.vim
 source $HOME/.config/nvim/treesitter.nvim
