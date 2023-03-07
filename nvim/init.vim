@@ -1,6 +1,7 @@
 let mapleader = " " " map leader to Space
 let g:instant_username = "bananjanne"
 let g:gitblame_date_format = '%r'
+let g:phpstan_analyse_level = 8
 nmap <leader>/ :let @/ = ""<CR>
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 set nu
@@ -72,9 +73,12 @@ source $HOME/.config/nvim/starlite.vim
 "highlight  FgCocErrorFloatBgCocFloating ctermfg=0 guifg=black
 call plug#begin("$HOME/.config/nvim/plugged")
 Plug 'jbyuki/instant.nvim'
+"Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+Plug 'camilledejoye/phpactor-mappings'
 "Plug 'ibhagwan/fzf-lua'
 "Plug 'EdenEast/nightfox.nvim'
 "Plug 'neoclide/coc-denite'
+Plug 'phpstan/vim-phpstan'
 "Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -90,11 +94,13 @@ Plug 'jwalton512/vim-blade'
 Plug 'duggiefresh/vim-easydir'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'wuelnerdotexe/vim-enfocado'
-"Plug 'romgrk/nvim-treesitter-context'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'ellisonleao/glow.nvim'
 "Plug 'pacokwon/onedarkhc.vim'
 "Plug 'SirVer/ultisnips'
-Plug 'williamboman/nvim-lsp-installer'
+"Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -107,6 +113,7 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'golang/vscode-go'
 Plug 'hrsh7th/nvim-cmp'
 " Plug 'josa42/nvim-lightline-lsp'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'f-person/git-blame.nvim'
@@ -116,11 +123,13 @@ Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'jreybert/vimagit'
 call plug#end()
 source $HOME/.config/nvim/telescope.vim
+source $HOME/.config/nvim/phpactor.nvim
 source $HOME/.config/nvim/treesitter.nvim
 "source $HOME/.config/nvim/lightline.nvim
 "source $HOME/.config/nvim/denite.vim
 source $HOME/.config/nvim/vim-go.nvim
 source $HOME/.config/nvim/dadbod.nvim
+source $HOME/.config/nvim/lua/nullls.lua
 "source $HOME/.config/nvim/colors/onedarkhc.vim
 "source $HOME/.config/nvim/autoloads/onedarkhc.vim
 "colorscheme onedarkhc

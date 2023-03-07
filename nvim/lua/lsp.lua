@@ -6,14 +6,15 @@ local lspServers = {
     'volar',
     'eslint',
     'intelephense',
-    'sumneko_lua',
+    'lua_ls',
     'dockerls',
     'bashls',
     'sqls',
     'lemminx',
+    -- 'phpactor'
 }
-
-require("nvim-lsp-installer").setup {
+require("mason").setup{}
+require("mason-lspconfig").setup {
     automatic_installation = true,
     -- 'intelephense', 
     ensure_installed = lspServers,
@@ -77,6 +78,13 @@ for _, lsp in pairs(lspServers) do
             };
         }
     end
+
+    if lsp == 'phpactor' then
+        opts.init_options = {
+            ["language_server_phpstan.enabled"] = true;
+        }
+    end
+
     if lsp == 'volar' then
          --lspconfig_configs.volar_api = {
          --           default_config: vim.tbl_extend('force',
