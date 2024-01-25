@@ -90,6 +90,31 @@ local servers = {
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },
+  intelephense = {
+    files = {
+      maxSize = 10000000;
+    },
+  },
+  gopls = {},
+  volar = {},
+  golangci_lint_ls = {},
+  bashls = {},
+  phpactor = {
+    init_options = {
+      language_server_phpstan = {
+        enabled = true;
+      },
+    },
+  },
+  tsserver = {},
+  dockerls = {},
+  eslint = {},
+  jsonls = {},
+  lemminx = {},
+  sqlls = {},
+  sqls = {}
+
+
 }
 
 -- Setup neovim lua configuration
