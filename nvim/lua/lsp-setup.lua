@@ -99,13 +99,6 @@ local servers = {
   volar = {},
   golangci_lint_ls = {},
   bashls = {},
-  phpactor = {
-    init_options = {
-      language_server_phpstan = {
-        enabled = true;
-      },
-    },
-  },
   tsserver = {},
   dockerls = {},
   eslint = {},

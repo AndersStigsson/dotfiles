@@ -1,7 +1,7 @@
 return {
   "Shougo/denite.nvim",
   keys = {
-    { "<leader>ff", "<cmd>DeniteProjectDir file/rec<CR>", desc = "Foobar" },
+    { "<leader>f", "<cmd>DeniteProjectDir file/rec<CR>", desc = "Foobar" },
     { "<leader>g", "<cmd>Denite grep:. -no-empty<CR>", desc = "Foobar" },
     { "<leader>b", "<cmd>Denite buffer<CR>", desc = "Foobar" },
   },
